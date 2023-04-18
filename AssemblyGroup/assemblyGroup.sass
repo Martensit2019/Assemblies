@@ -1,0 +1,132 @@
+@mixin x-scroll-window
+  padding: 15.5px 10.5px 9px
+  &:deep(.assemblies-box)
+    overflow-y: hidden
+    overflow-x: scroll
+    ms-overflow-style: none
+    scrollbar-width: none
+    &::-webkit-scrollbar
+      height: 6.5px
+  &:deep(.assemblies-box__wrapper)
+    width: max-content
+    height: 100%
+    overflow: scroll
+    &::-webkit-scrollbar
+      display: none
+
+@mixin search-window
+  &:deep(.assemblies-search input)
+    font-size: 14px
+    line-height: 18px
+    color: $color-text-placeholder
+    padding: 6px 12px
+  &:deep(.input_group)
+    padding-bottom: 6px
+  &:deep(.input_group .search)
+    color: $color-text-placeholder
+
+@mixin tree-view-window
+  &:deep(.assemblies-box__wrapper)
+    margin-top: 0
+  &:deep(.tree-box__item)
+    font-size: 10px
+    margin-bottom: -2px
+  &:deep(.tree-box__item .icon:nth-child(2))
+    margin-left: 4px
+  &:deep(.tree-box__item span)
+    padding-right: 4px
+    padding-left: 4px
+
+.assembly-group
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    gap: 4px
+    margin-bottom: 50px
+    &:deep(.assemblies-box__wrapper)
+      max-height: 168px
+    &:deep(#assembliy_group_estimate_base_window .assemblies-box__wrapper)
+      max-height: 144px
+    &:deep(.assembly-group__image__inner-container)
+      height: 239px
+    &:deep(.main-elem-table)
+      height: 230px
+    .area
+      &.area-zero
+        width: 100%
+      &.area-one,
+      &.area-four
+        width: 253px
+
+      &.area-two,
+      &.area-five
+        width: calc(100% - 726px)
+        min-width: 393px
+      &.area-three,
+      &.area-six
+        width: 465px
+
+    div
+      &:has(#assembliy_group_assemblies_window)
+        .assemblies-window
+          @include x-scroll-window
+          @include search-window
+          @include tree-view-window
+          &:deep(.assemblies-box)
+            height: 195px
+
+      &:has(#assembliy_group_estimate_base_window)
+        grid-row: 3 / 4
+        grid-column: 1 / 1
+        .assemblies-window
+          @include x-scroll-window
+          @include search-window
+          @include tree-view-window
+          &:deep(.assemblies-window__head__title span)
+            font-size: 9px
+            line-height: 11px
+          &:deep(.assemblies-box)
+            height: 195px
+
+      &:has(#assembliy_group_forming_window)
+        .assemblies-window
+          padding: 12px 8px 17px 24px
+
+      &:has(#assembliy_group_directory_window)
+        .assemblies-window
+          padding: 12px 8px 16px 24px
+  &__wrap
+    padding-top: 34px
+    display: grid
+    grid-template-rows: 191px 104px 293px
+    grid-template-columns: 253px minmax(400px, 54.3%) 465px
+    gap: 4px
+    overflow-x: scroll
+
+  &__image
+    &-window
+      flex-direction: column
+      align-items: center
+      flex-grow: 2
+    &__outer-container
+      flex-grow: 1
+    &__inner-container
+      height: 132px
+      display: flex
+      flex-direction: row
+      align-items: center
+      justify-content: space-between
+    &__arrow
+      cursor: pointer
+      &-container
+        width: 56px
+        height: 56px
+        display: flex
+        align-items: center
+        justify-content: center
+        background-color: $color-bg-main
+        border-radius: 50%
+        box-shadow: 1px 4px 48px rgba(0, 16, 61, 0.12)
+        transform: rotate(180deg)
+      &.inverted
+        transform: rotate(180deg)

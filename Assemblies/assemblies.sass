@@ -1,0 +1,75 @@
+.assemblies-content
+  height: 194px
+  overflow-y: scroll
+  ms-overflow-style: none
+  scrollbar-width: none
+  &::-webkit-scrollbar
+    height: 8.5px
+  &__inner
+    width: 500px
+  
+
+.tree-box
+  padding: 0
+  &__item
+    display: flex
+    align-items: center
+    font-weight: 500
+    font-size: 14px
+    line-height: 21px
+    margin-bottom: 7px
+    &.pl
+      padding: 5px 40px
+    img
+      padding: 7px
+    span
+      color: $color-dark-grey
+      padding-right: 8px
+      padding-left: 12px
+    .icon
+      margin-left: 18px
+      &.tree
+        width: 20px
+        height: 20px
+        background: $color-main
+        border-radius: 4px
+        display: flex
+        color: $color-bg-main
+        padding-top: 6px
+        padding-left: 5px
+      &.yellow
+        color: $color-fill-yellow
+        margin-top: 4px
+.assemblies-box
+  .assemblies-box-item
+    font-weight: 400
+    padding: 10px 32px
+    background-color: $color-bg-element
+    border: 1px solid $color-border-table
+    &__top
+      margin-bottom: 8px
+      span
+        font-weight: 700
+        padding-right: 20px
+    &__bottom
+      color: $color-dark-grey
+      span
+        font-weight: 700
+        padding: 0 32px 0 16px
+        color: $color-text-main
+
+.icon
+  width: 20px
+  height: 20px
+  // border: 1px solid black
+
+.tree
+  background-color: $color-main
+  border-radius: 4px
+  color: $color-fill-white
+
+.folder
+  color: $color-fill-yellow
+
+.file
+  color: $color-fill-grey

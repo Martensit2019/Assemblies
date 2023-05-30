@@ -28,7 +28,7 @@
         >
           <div v-if="item.i === '0'">
             <AssembliesRegistryWindow title="По общим параметрам">
-              <AssembliesRegistrySettings @filter="filter" />
+              <AssembliesRegistrySettings @filter="filter" />                                               <--------------
             </AssembliesRegistryWindow>
           </div>
           <div v-if="item.i === '1'">
@@ -55,11 +55,11 @@
   import { GridLayout, GridItem } from 'vue3-grid-layout-next'
   import settings from './AssembliesRegistryWindowSettings'
   const windowSettings = settings
-  const assembliesRegistryFilter = ref()
-  const filter = (filterObject: object) => {
-    assembliesRegistryFilter.value = filterObject
-  }
-  provide('assemblies-registry-filter', assembliesRegistryFilter)
+  const assembliesRegistryFilter = ref()                                          <-------------------
+  const filter = (filterObject: object) => {                                      <-------------------
+    assembliesRegistryFilter.value = filterObject                                 <-------------------
+  }                                                                               <-------------------
+  provide('assemblies-registry-filter', assembliesRegistryFilter)                 <-------------------
 </script>
 <style scoped lang="sass">
   @import "assembliesRegistry"

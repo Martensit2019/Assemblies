@@ -95,9 +95,9 @@
   import { getPrivateUsersRequest, getReferenceRequest, IUser } from '@/api'
   import { REFERENCE } from '@/enums'
 
-  const emits = defineEmits<{
-    (e: 'filter', value: object): void
-  }>()
+  const emits = defineEmits<{                                           <-------------------
+    (e: 'filter', value: object): void                                  <-------------------
+  }>()                                                                  <-------------------
 
   const operator = ref()
   const status = ref()
@@ -108,7 +108,7 @@
   const family = ref()
   const instance = ref()
 
-  emits('filter', { operator, status })
+  emits('filter', { operator, status })                                          <-------------------
 
   const userList = ref<IUser[]>([])
   const buildStateList = ref<any[]>([])

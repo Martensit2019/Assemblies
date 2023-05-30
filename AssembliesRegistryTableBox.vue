@@ -164,7 +164,7 @@
   const pages = [2, 3, 4, 5, '...', 10]
   const fileName = `Реестр ПСМ ${new Date()}`
 
-  const assembliesRegistryFilter: any = inject('assemblies-registry-filter')
+  const assembliesRegistryFilter: any = inject('assemblies-registry-filter')                                          <-------------------
 
   const generatePDF = () => {
     const tableHeaders = headers
